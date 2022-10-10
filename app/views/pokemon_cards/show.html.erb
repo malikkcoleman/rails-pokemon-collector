@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pokemon_card %>
+
+<div>
+  <%= link_to "Edit this pokemon card", edit_pokemon_card_path(@pokemon_card) %> |
+  <%= link_to "Back to pokemon cards", pokemon_cards_path %>
+
+  <%= button_to "Destroy this pokemon card", @pokemon_card, method: :delete %>
+</div>

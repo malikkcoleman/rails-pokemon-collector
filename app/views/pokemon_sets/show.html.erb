@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pokemon_set %>
+
+<div>
+  <%= link_to "Edit this pokemon set", edit_pokemon_set_path(@pokemon_set) %> |
+  <%= link_to "Back to pokemon sets", pokemon_sets_path %>
+
+  <%= button_to "Destroy this pokemon set", @pokemon_set, method: :delete %>
+</div>
