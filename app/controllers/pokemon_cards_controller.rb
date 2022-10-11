@@ -8,6 +8,7 @@ class PokemonCardsController < ApplicationController
 
   # GET /pokemon_cards/1 or /pokemon_cards/1.json
   def show
+    @pokemon_sets = PokemonSet.all
   end
 
   # GET /pokemon_cards/new

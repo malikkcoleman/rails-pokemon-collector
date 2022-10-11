@@ -1,6 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="">
+
+</head>
+<body>
 <h1>Series</h1>
+<%= render "layouts/navbar" %>
+
 
 <div id="series">
   <% @series.each do |series| %>
@@ -12,3 +23,5 @@
 </div>
 
 <%= link_to "New series", new_series_path %>
+</body>
+</html>

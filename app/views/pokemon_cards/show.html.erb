@@ -1,6 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<h1> <%= @pokemon_card.name%> </h1>
+<%= render "layouts/navbar" %>
+<p>
+  <img src=<%= @pokemon_card.image %> />
+</p>
 
-<%= render @pokemon_card %>
+<p>
+  <%= @pokemon_card.card_number%>
+</p>
+
+<p>
+  <%= @pokemon_card.card_type%>
+</p>
+  <%= @pokemon_card.rarity%>
+<p>
+  <%= @pokemon_card.edition%>
+</p>
+  $<%= @pokemon_card.price%>
+
+
+  <%= @pokemon_sets.each do |pokemon_set|%>
+    <% if pokemon_set.id == @pokemon_card.pokemon_set_id%>
+      <p><%= pokemon_set.name%></p>
+      <% break %>
+    <% end %>
+  <% end %>
+</p>
 
 <div>
   <%= link_to "Edit this pokemon card", edit_pokemon_card_path(@pokemon_card) %> |
