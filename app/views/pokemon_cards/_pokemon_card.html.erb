@@ -1,42 +1,10 @@
 <div id="<%= dom_id pokemon_card %>">
+
   <p>
-    <strong>Set:</strong>
-    <%= pokemon_card.set_id %>
+    <a href="/pokemon_cards/<%= pokemon_card.id%>"><img src="<%= pokemon_card.image %>" /></a>
   </p>
 
   <p>
-    <strong>Name:</strong>
-    <%= pokemon_card.name %>
+     <a href="/pokemon_cards/<%= pokemon_card.id%>"><%= pokemon_card.name%></a>
   </p>
-
-  <p>
-    <strong>Card number:</strong>
-    <%= pokemon_card.card_number %>
-  </p>
-
-  <p>
-    <strong>Card type:</strong>
-    <%= pokemon_card.card_type %>
-  </p>
-
-  <p>
-    <strong>Rarity:</strong>
-    <%= pokemon_card.rarity %>
-  </p>
-
-  <p>
-    <strong>Edition:</strong>
-    <%= pokemon_card.edition %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= pokemon_card.price %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= pokemon_card.image %>
-  </p>
-
 </div>

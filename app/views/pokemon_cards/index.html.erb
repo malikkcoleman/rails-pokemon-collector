@@ -1,14 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/Users/colemancapsule/Documents/RRCWEBD3008/pokemon_collector/app/assets/stylesheets/pokemon_cards_styles.css">
 <p style="color: green"><%= notice %></p>
-
+</head>
+<body>
 <h1>Pokemon cards</h1>
 
-<div id="pokemon_cards">
-  <% @pokemon_cards.each do |pokemon_card| %>
-    <%= render pokemon_card %>
-    <p>
-      <%= link_to "Show this pokemon card", pokemon_card %>
-    </p>
-  <% end %>
+<div class="section-pokemon_cards">
+  <div class="container">
+    <div class="card-flexbox">
+      <% @pokemon_cards.each do |pokemon_card| %>
+        <%= render pokemon_card %>
+
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <%= link_to "New pokemon card", new_pokemon_card_path %>
+</body>
+</html>
