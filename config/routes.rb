@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   # get "series/:id", to: "series#show", as: "series#show"
   get "/pokemon_sets", to: "pokemon_sets#index"
   get "/pokemon_cards", to: "pokemon_cards#index"
+  get "/about_page", to: "about_page#index"
+
 end
