@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root "series", to: "series#index", as: "series" #
+  # root "series#index"
+  # get "/series", to: "series#index", as: "series"
+  # get "series/:id", to: "series#show", as: "series#show"
 end

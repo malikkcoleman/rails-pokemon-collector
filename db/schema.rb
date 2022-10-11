@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_10_233528) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_11_001727) do
   create_table "pokemon_cards", force: :cascade do |t|
-    t.integer "set_id"
     t.string "name"
     t.string "card_number"
     t.string "card_type"
@@ -22,14 +21,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_233528) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pokemon_set_id", null: false
+    t.index ["pokemon_set_id"], name: "index_pokemon_cards_on_pokemon_set_id"
   end
 
   create_table "pokemon_sets", force: :cascade do |t|
-    t.integer "series_id"
     t.string "name"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "series_id", null: false
+    t.index ["series_id"], name: "index_pokemon_sets_on_series_id"
   end
 
   create_table "series", force: :cascade do |t|
@@ -39,4 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_10_233528) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pokemon_cards", "pokemon_sets"
+  add_foreign_key "pokemon_sets", "series"
 end
