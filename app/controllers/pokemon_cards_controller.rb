@@ -16,7 +16,7 @@ class PokemonCardsController < ApplicationController
 
   # GET /pokemon_cards or /pokemon_cards.json
   def index
-    @pokemon_cards = PokemonCard.all
+    @pokemon_cards = PokemonCard.search(params[:search])
   end
 
   # GET /pokemon_cards/1 or /pokemon_cards/1.json
@@ -82,6 +82,8 @@ class PokemonCardsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pokemon_card_params
-      params.require(:pokemon_card).permit(:set_id, :name, :card_number, :card_type, :rarity, :edition, :price, :image)
+      params.require(:pokemon_card).permit(:set_id, :name, :card_number, :card_type, :rarity, :edition, :price, :image, :search)
     end
+
+
 end
