@@ -9,10 +9,11 @@
 <h1>Pokemon cards</h1>
 <%= render "layouts/navbar" %>
 
-<h2>Search by type</h2>
-  <%= form_tag(pokemon_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search])%>
-    <%= submit_tag ("Search") %>
+<h2>Search By Type</h2>
+<%= form_tag pokemon_cards_url, :method => "get" do %>
+  <%= label_tag(:search, "Search By Type") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search", :name => nil)%>
   <% end %>
 
 
