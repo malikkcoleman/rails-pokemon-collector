@@ -10,6 +10,12 @@
 <%= render "layouts/navbar" %>
 
 <h2>Search by type</h2>
+  <%= form_tag(pokemon_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search])%>
+    <%= submit_tag ("Search") %>
+  <% end %>
+
+
 
 <div class="section-pokemon_cards">
   <div class="container">

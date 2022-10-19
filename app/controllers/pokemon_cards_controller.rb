@@ -1,6 +1,19 @@
 class PokemonCardsController < ApplicationController
   before_action :set_pokemon_card, only: %i[ show edit update destroy ]
 
+  def self.search(search)
+    if search
+      pokemon_type = PokemonCard.find_by(card_type: search)
+      if pokemon_type
+        self.where(card_type: pokemon_type)
+      else
+        @pokemon_cards = PokemonCard.all
+      end
+    else
+      @pokemon_cards = Pokemon.all
+    end
+  end
+
   # GET /pokemon_cards or /pokemon_cards.json
   def index
     @pokemon_cards = PokemonCard.all
@@ -19,6 +32,9 @@ class PokemonCardsController < ApplicationController
   # GET /pokemon_cards/1/edit
   def edit
   end
+
+  def pokemon_card_params
+    params.require(:pokemon_card).permit()
 
   # POST /pokemon_cards or /pokemon_cards.json
   def create
