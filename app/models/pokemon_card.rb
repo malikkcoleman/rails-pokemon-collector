@@ -3,6 +3,8 @@ class PokemonCard < ApplicationRecord
 
   validates :name, :card_number, :card_type, :image, presence:true
 
+  paginates_per 20
+
   def self.search(search)
     if search
       @pokemon_cards = PokemonCard.find(card_type: search)

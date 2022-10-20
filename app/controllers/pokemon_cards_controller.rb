@@ -5,7 +5,7 @@ class PokemonCardsController < ApplicationController
 
   # GET /pokemon_cards or /pokemon_cards.json
   def index
-    @pokemon_cards = PokemonCard.all
+    @pokemon_cards = PokemonCard.page params[:page]
 
   end
 
