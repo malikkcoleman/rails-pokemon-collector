@@ -1,9 +1,10 @@
-
+<%= render "layouts/navbar" %>
 <%= render @series %>
 
-<div>
+<div class="container">
+  <p>
   <%= link_to "Edit this series", edit_series_path(@series) %> |
   <%= link_to "Back to series", series_index_path %>
 
-  <%= button_to "Destroy this series", @series, method: :delete %>
+  </p>
 </div>

@@ -3,9 +3,11 @@
 
 
 
-<h1>Pokemon cards</h1>
+
 <%= render "layouts/navbar" %>
 
+<div class="container">
+<h3>Pokemon cards</h3>
 <form action="/search">
   <input name="q" type="text" placeholder="Search">
   <button type="submit">Search</button>
@@ -19,10 +21,15 @@
         <%= render pokemon_card%>
 
       <% end %>
-      <%= paginate @pokemon_cards%>
+
     </div>
 
   </div>
+</div>
+</div>
+
+<div class="container">
+  <%= paginate @pokemon_cards%>
 </div>
 
 
