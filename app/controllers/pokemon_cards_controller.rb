@@ -5,7 +5,13 @@ class PokemonCardsController < ApplicationController
 
   # GET /pokemon_cards or /pokemon_cards.json
   def index
-    @pokemon_cards = PokemonCard.search(params[:search])
+    @pokemon_cards = PokemonCard.all
+
+  end
+
+  def search
+    wildcard_search = "%#{params[:keywords]}%"
+    @pokemon_cards = PokemonCard.where("name LIKE ?", wildcard_search)
   end
 
   # GET /pokemon_cards/1 or /pokemon_cards/1.json

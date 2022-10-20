@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/Users/colemancapsule/Documents/RRCWEBD3008/pokemon_collector/app/assets/stylesheets/pokemon_cards_styles.css">
+
+</head>
+<body>
+
+<h1>Pokemon cards</h1>
+<%= render "layouts/navbar" %>
+
+<p>
+  Found <%= pluralize(@pokemon_cards.count, 'Pokemon Card') %> when searching for: <%= params[:keywords] %>
+</p>
+<ul>
+  <% @pokemon_cards_searched.each  do | pokemon_card| %>
+    <%= render pokemon_card%>
+  <% end %>
+</ul>
+
+</body>
+</html>

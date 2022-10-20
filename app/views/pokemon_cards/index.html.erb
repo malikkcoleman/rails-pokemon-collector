@@ -2,27 +2,29 @@
 <html>
 <head>
 <link rel="stylesheet" href="/Users/colemancapsule/Documents/RRCWEBD3008/pokemon_collector/app/assets/stylesheets/pokemon_cards_styles.css">
-<p style="color: green"><%= notice %></p>
+
 </head>
 <body>
 
 <h1>Pokemon cards</h1>
 <%= render "layouts/navbar" %>
 
-<h2>Search By Type</h2>
-<%= form_tag pokemon_cards_url, :method => "get" do %>
-  <%= label_tag(:search, "Search By Type") %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag("Search", :card_type => nil)%>
-<% end %>
-
-
+<%= form_with(url: '/pokemon_cards', method: :get, local: true) do %>
+        <div >
+            <div >
+              <%= text_field_tag(:keywords, nil, placeholder: 'Searching for Pokemon') %>
+            </div>
+            <div class="control">
+              <%= submit_tag("Search") %>
+            </div>
+          </div>
+          <% end %>
 
 <div class="section-pokemon_cards">
   <div class="container">
     <div class="card-flexbox">
       <% @pokemon_cards.each do |pokemon_card| %>
-        <%= render pokemon_card %>
+        <%= render pokemon_card%>
 
       <% end %>
     </div>
