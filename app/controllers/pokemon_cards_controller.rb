@@ -11,7 +11,7 @@ class PokemonCardsController < ApplicationController
 
   def search
     wildcard_search = "%#{params[:keywords]}%"
-    @pokemon_cards = PokemonCard.where("name LIKE ?", wildcard_search)
+    @pokemon_cards = PokemonCard.where("name LIKE ?", "%" + params[:q] + "%")
   end
 
   # GET /pokemon_cards/1 or /pokemon_cards/1.json

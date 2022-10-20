@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   get "/pokemon_sets", to: "pokemon_sets#index"
   get "/pokemon_cards", to: "pokemon_cards#index"
   get "/about_page", to: "about_page#index"
-  get "/pokemon_cards/search", to: "pokemon_cards#search"
+  get "/search", to: "pokemon_cards#search"
+
+
 end

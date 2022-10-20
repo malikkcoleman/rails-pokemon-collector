@@ -9,16 +9,11 @@
 <h1>Pokemon cards</h1>
 <%= render "layouts/navbar" %>
 
-<%= form_with(url: '/pokemon_cards', method: :get, local: true) do %>
-        <div >
-            <div >
-              <%= text_field_tag(:keywords, nil, placeholder: 'Searching for Pokemon') %>
-            </div>
-            <div class="control">
-              <%= submit_tag("Search") %>
-            </div>
-          </div>
-          <% end %>
+<form action="/search">
+  <input name="q" type="text" placeholder="Search">
+  <button type="submit">Search</button>
+</form>
+
 
 <div class="section-pokemon_cards">
   <div class="container">

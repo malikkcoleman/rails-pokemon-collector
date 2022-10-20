@@ -9,14 +9,24 @@
 <h1>Pokemon cards</h1>
 <%= render "layouts/navbar" %>
 
+
 <p>
-  Found <%= pluralize(@pokemon_cards.count, 'Pokemon Card') %> when searching for: <%= params[:keywords] %>
+  Found <%= pluralize(@pokemon_cards.count, 'Pokemon Card') %> when searching for: <%= params[:q] %>
 </p>
-<ul>
-  <% @pokemon_cards_searched.each  do | pokemon_card| %>
-    <%= render pokemon_card%>
-  <% end %>
-</ul>
+<div class="section-pokemon_cards">
+  <div class="container">
+    <div class="card-flexbox">
+      <% @pokemon_cards.each do |pokemon_card| %>
+        <%= render pokemon_card%>
+
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+
+
 
 </body>
 </html>
